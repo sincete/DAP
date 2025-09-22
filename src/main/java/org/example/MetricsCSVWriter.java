@@ -19,7 +19,7 @@ public class MetricsCSVWriter {
                 }
             }
         } catch (IOException e) {
-            throw new RuntimeException("Ошибка при создании файла CSV", e);
+            throw new RuntimeException("Error creating CSV file", e);
         }
     }
 
@@ -29,13 +29,13 @@ public class MetricsCSVWriter {
                     "%s,%d,%.6f,%d,%d,%d\n",
                     algorithm,
                     n,
-                    timeNanos / 1_000_000.0, // наносекунды → миллисекунды
+                    timeNanos / 1_000_000.0,
                     metrics.comparisons,
                     metrics.maxDepth,
                     metrics.allocations
             ));
         } catch (IOException e) {
-            throw new RuntimeException("Ошибка записи в CSV", e);
+            throw new RuntimeException("Error writing to CSV", e);
         }
     }
 }

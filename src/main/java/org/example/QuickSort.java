@@ -20,7 +20,7 @@ public class QuickSort {
 
         int partitionIndex = partition(arr, left, right, pivot, metrics);
 
-        // recurse on smaller part first
+
         if (partitionIndex - 1 - left < right - (partitionIndex + 1)) {
             quickSort(arr, left, partitionIndex - 1, depth + 1, metrics);
             quickSort(arr, partitionIndex + 1, right, depth + 1, metrics);
